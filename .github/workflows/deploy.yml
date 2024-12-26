@@ -26,7 +26,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: client
           push: true
           tags: ghcr.io/alexbidenko/personal-blog/client:latest
           cache-from: type=gha
