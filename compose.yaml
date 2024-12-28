@@ -2,11 +2,28 @@ version: "3.8"
 
 services:
   entrypoint:
+    image: ghcr.io/alexbidenko/personal-blog/nginx:latest
+    expose:
+      - 3000
+    networks:
+      - app
+      - server
+    volumes:
+      - nginx-cache:/var/cache/nginx
+    deploy:
+      replicas: 1
+      update_config:
+        failure_action: rollback
+        order: start-first
+      restart_policy:
+        condition: on-failure
+
+  application:
     image: ghcr.io/alexbidenko/personal-blog/client:latest
     expose:
       - 3000
     networks:
-      - server
+      - app
     deploy:
       replicas: 1
       update_config:
@@ -16,6 +33,10 @@ services:
         condition: on-failure
 
 networks:
+  app:
   server:
     external:
       name: server
+
+volumes:
+  nginx-cache:

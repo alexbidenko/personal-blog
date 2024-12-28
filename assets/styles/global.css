@@ -1,0 +1,17 @@
+.docs-prev-next a .wrapper {
+  overflow: hidden;
+}
+
+.docs-prev-next a .title {
+  max-width: 100%;
+}
+
+@media (min-width: 640px) {
+  .page-body .docs-prev-next {
+    flex-wrap: wrap;
+  }
+
+  .docs-prev-next a.next {
+    margin-left: auto;
+  }
+}
