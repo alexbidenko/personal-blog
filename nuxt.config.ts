@@ -18,6 +18,10 @@ export default defineNuxtConfig({
     }
   },
 
+  nitro: {
+    preset: 'bun',
+  },
+
   css: ['~/assets/styles/global.css'],
 
   compatibilityDate: '2024-10-24'
