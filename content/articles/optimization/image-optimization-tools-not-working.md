@@ -49,7 +49,7 @@
 
 На стороне SSR фреймворков, как правило, есть готовые встроенные настройки для такой задачи. Например, решение для nuxt/image:
 
-```ts
+```ts [nuxt.config.ts]
 export default defineNuxtConfig({
   modules: ['@nuxt/image'],
   image: {
@@ -62,7 +62,7 @@ export default defineNuxtConfig({
 
 Или же можно добавить необходимые заголовки на стороне Web-сервера. Например, для *Nginx*:
 
-```nginx configuration
+```nginx configuration [application.conf]
 server {
   listen 8000;
 
@@ -109,7 +109,7 @@ server {
 
 На стороне `http` блока нужно объявить кеш хранилище:
 
-```nginx configuration
+```nginx configuration [nginx.conf]
 http {
   # Тут будут и иные необходимые вам настройки
 
@@ -127,7 +127,7 @@ http {
 
 Когда кеш хранилище будет настроено, его можно будет использовать. Добавить его можно в блоке `server`:
 
-```nginx configuration
+```nginx configuration [application.conf]
 server {
   location ~* ^\/_ipx\/ {
     expires 1y;
@@ -159,7 +159,7 @@ server {
 Если вы используете приложение в *Docker*, то, разумеется, не стоит забывать, что чтобы данные не потерялись при перезапуске контейнера,
 то директорию кеша картинок необходимо добавить в список volume вашего контейнера. Просто и легко вот так:
 
-```yaml
+```yaml [compose.yaml]
 services:
   nginx:
     image: application-nginx

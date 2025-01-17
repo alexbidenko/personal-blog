@@ -1,23 +1,23 @@
 {
-  "name": "docus-starter",
-  "version": "0.1.0",
+  "name": "personal-blog",
   "private": true,
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
     "generate": "nuxi generate",
     "preview": "nuxi preview",
+    "upgrade": "nuxi upgrade -f",
     "lint": "eslint ."
   },
   "devDependencies": {
     "@nuxt-themes/docus": "^1.15.1",
-    "@nuxt/devtools": "^1.6.0",
-    "@nuxt/eslint-config": "^0.6.1",
-    "@nuxt/image": "^1.8.1",
-    "@nuxtjs/plausible": "^1.0.3",
-    "@types/node": "^22.9.0",
-    "eslint": "^9.14.0",
-    "nuxt": "^3.14.159",
+    "@nuxt/devtools": "^1.7.0",
+    "@nuxt/eslint-config": "^0.7.5",
+    "@nuxt/image": "^1.9.0",
+    "@nuxtjs/plausible": "^1.2.0",
+    "@types/node": "^22.10.7",
+    "eslint": "^9.18.0",
+    "nuxt": "^3.15.2",
     "nuxt-security": "^2.1.5"
   }
 }
